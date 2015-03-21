@@ -193,13 +193,13 @@ frelacumcar2<-as.table(cumsum(frelcar2))
 frelacumcar2 # Comprobamos que la suma de las frecuencia relativas acumuladas es 1.
 
 # Resumen de dataframe sin valores extremos
-summary(carat2) #media: 0.7423, mediana: 0.7 , mantiene unos valores similares a antes
+summary(carat2) # media: 0.7423, mediana: 0.7 , mantiene unos valores similares a antes
 mfv(carat) # moda 0.3, misma moda que antes
 
 # cuartiles
 quantile(carat2)
 
-# representaci?n
+# representacion
 boxplot(carat2) # se comprueba que no hay valores extremos como antes
 var(carat2)   # 0.1544
 sd(carat2)   # 0.39300
@@ -214,8 +214,8 @@ skew(carat2) #proxima a uno, practicamente asimetrica
 
 # contraste de Kolmogorov-Smirnoff Lilliefors. Comprobaremos la hipotesis de la normal:
 sort(carat)
-lillie.test(carat) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad
-lillie.test(carat2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
+lillie.test(carat) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad (p-value es < 0.05, por lo que se rechaza la Ho)
+lillie.test(carat2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad (p-value es < 0.05, por lo que se rechaza la Ho)
 # En ambos casos, tanto usando todos los valores de la variable, como descartando los valores extremos,
 # no pasa la hipotesis de la normal.
 
@@ -224,7 +224,7 @@ lillie.test(carat2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
 
 muestra.estudio <- df.estudio[1:4000, ]
 shapiro.test(muestra.estudio$carat) # obtenemos 2.2e-16, por lo que no pasa el test de la normal.
-
+# (p-value es < 0.05, por lo que se rechaza la Ho)
 
 -----------------------------------------------------------------
 ######### Variable "table" (anchura de la parte superior)- VARIABLE CUANTITATIVA DISCRETA
@@ -305,7 +305,7 @@ mfv(table2) # moda 56, misma moda que antes
 # cuartiles
 quantile(table2)
 
-# representaci?n
+# representacion
 boxplot(table2) # se comprueba que no hay valores extremos como antes
 var(table2)   # 4.3023
 sd(table2)   # 2.0741
@@ -321,8 +321,8 @@ skew(table2) # 0.3668, proxima a cero, practicamente simetrica. Al eliminar los 
 
 # contraste de Kolmogorov-Smirnoff Lilliefors. Comprobaremos la hipotesis de la normal:
 sort(table)
-lillie.test(table) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad
-lillie.test(table2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
+lillie.test(table) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad. (p-value es < 0.05, por lo que se rechaza la Ho)
+lillie.test(table2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad. (p-value es < 0.05, por lo que se rechaza la Ho)
 # En ambos casos, tanto usando todos los valores de la variable, como descartando los valores extremos,
 # no pasa la hipotesis de la normal.
 
@@ -331,7 +331,7 @@ lillie.test(table2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
 
 muestra.estudio <- df.estudio[1:4000, ]
 shapiro.test(muestra.estudio$table) # obtenemos 2.2e-16, por lo que no pasa el test de la normal.
-
+# (p-value es < 0.05, por lo que se rechaza la Ho)
 
 -----------------------------------------------------------------
 ######### Variable "price" (precio del diamante)- VARIABLE CUANTITATIVA DISCRETA
@@ -410,7 +410,7 @@ mfv(price2) # moda 605, igual a la anterior.
 # cuartiles
 quantile(price2)
 
-# representaci?n
+# representacion
 boxplot(price2) # se comprueba que no hay valores extremos como antes
 var(price2)   # 7643568
 sd(price2)   # 2764.7
@@ -425,8 +425,8 @@ skew(price2) # 1.1893, presenta asimetria positiva.
 
 # contraste de Kolmogorov-Smirnoff Lilliefors. Comprobaremos la hipotesis de la normal:
 sort(price)
-lillie.test(price) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad
-lillie.test(price2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
+lillie.test(price) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad. (p-value es < 0.05, por lo que se rechaza la Ho)
+lillie.test(price2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad.(p-value es < 0.05, por lo que se rechaza la Ho)
 # En ambos casos, tanto usando todos los valores de la variable, como descartando los valores extremos,
 # no pasa la hipotesis de la normal.
 
@@ -435,7 +435,7 @@ lillie.test(price2) # p-value 2.2e-16, se rechaza la Hipotesis de normalidad
 
 muestra.estudio <- df.estudio[1:4000, ]
 shapiro.test(muestra.estudio$price) # obtenemos 2.2e-16, por lo que no pasa el test de la normal.
-
+# (p-value es < 0.05, por lo que se rechaza la Ho)
 
 -----------------------------------------------------------------
 ######### Variable "cut" (calidad)- VARIABLE CUALITATIVA ORDINAL
@@ -486,7 +486,7 @@ skew(cut2) # 0.717, presenta asimetria.
 
 # contraste de Kolmogorov-Smirnoff Lilliefors. Comprobaremos la hipotesis de la normal:
 sort(cut2)
-lillie.test(cut2) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad
+lillie.test(cut2) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad. (p-value es < 0.05, por lo que se rechaza la Ho)
 # En ambos casos, tanto usando todos los valores de la variable, como descartando los valores extremos,
 # no pasa la hipotesis de la normal.
 
@@ -495,14 +495,15 @@ lillie.test(cut2) # p-value 2.2e-16,  se rechaza la Hipotesis de normalidad
 
 muestra.estudio <- df.estudio[1:4000, ]
 shapiro.test(muestra.estudio$cut2) # obtenemos 2.2e-16, por lo que no pasa el test de la normal.
-
+# (p-value es < 0.05, por lo que se rechaza la Ho)
 -------------------------------------------------------------------------------------------------
   
-### APLICACION DE LA INFERENCIA AL CONJUNTO DE DATOS.
+############################# APLICACION DE LA INFERENCIA AL CONJUNTO DE DATOS ###############################################
   
 # Vamos a realizar la inferencia entre dos muestras de datos independientes de nuestro dataset.
 # Para ello, primero comprobamos qué variables presentan mayor independencia.
 # Realizamos un test de correlacion entre todas las variables:
+# Suponemos que el dataset seguira una distribucion normal.
 
 # El estudio de la inferencia lo realizamos sobre una muestra del dataset, de forma que
 # intentaremos conocer ciertas caracteristicas de la poblacion a partir de esta muestra:
@@ -523,12 +524,105 @@ Price.CutIdeal = muestra.estudio[CutIdeal,]$price
 Price.CutFair = muestra.estudio[CutFair,]$price
 
 # Obtenemos el test de t.student:
-t.test(Price.CutIdeal, Price.CutFair)
+# Se indica "var.equal=T", para indicar que ambas varianzas tienen que ser iguales.
+t.test(Price.CutIdeal, Price.CutFair, var.equal=T)
 
-# obtenemos un p-value = 3.415e -05, es decir < 0.05 por lo que se acepta la hipotesis alternativa.
+# obtenemos un p-value = 0.05943, es decir > 0.05 por lo que se acepta la hipotesis nula.
 
 # El resultado obtenido lo podemos interpretar como:
 
-# En la muestra , precio medio del diamante con un corte "ideal" es de 2654.86 $ y el precio medio del diamante
+# En la muestra, el precio medio del diamante con un corte "ideal" es de 2654.86 $ y el precio medio del diamante
 # con un corte "fair" es de 2862.306 $.
-# El intervalo de confianza del 95 % de la diferencia en el precio medio del diamante está entre 111.13 y 303.74.
+# El intervalo de confianza es del 95 %.
+
+
+-------------------------------------------------------------------------------------------
+  
+############################### MODELO DE REGRESION ##############################################
+
+# Partimos de nuestro conjunto de datos, veremos primeramente un resumen de sus datos:
+
+summary(df.estudio)
+
+# Veamos ahora, que nivel de correlacion tienen todas las variables de nuestro conjunto de datos:
+cor(df.estudio)
+
+# Quiero obtener el modelo de regresio que mejor explique el precio del diamante (price) en funcion 
+# de su peso (carat) y de su anchura respecto la parte superior (table)
+
+attach(df.estudio)
+
+# Explicamos el precio en funcion del peso y de la anchura en la parte superior:
+diamantes.lm = lm(price~carat+table)
+summary(diamantes.lm)
+
+# Creamos la ecuacion del modelo de regresion:
+precio_diamante = 1961.992 + 7820.038 carat - 74.301 table
+
+# Es decir, a mayor cantidad de peso (carat) mayor es el precio del diamante, y cuanto mayor
+# sea la anchura del diamante en su parte superior (table) menor sera el precio del diamante (signo -) aunque influye
+# mucho menos que la otra variable.
+
+# El ajuste de R-squared es del 85.1½ por lo que explica bastante bien el modelo.
+
+
+# Vamos a represetnar la relacion del precio respecto al peso:
+reg1<-lm(price ~ carat)
+qqplot(price,carat)
+abline(reg1, col = "red")
+
+# Y ahora, representamos la relacion del precio respecto a la anchura:
+reg2<-lm(price ~ table)
+qqplot(price,table)
+abline(reg2, col = "red")
+
+
+# Podremos predecir, el precio de un diamante en funcion de un determinado peso y anchura:
+prediccion.precio<-predict(diamantes.lm)
+prediccion.precio
+
+# Realizamos un ejemplo: Predecir el precio para un diamante de carat = 0.35 y table = 62
+nuevoDiamante = data.frame(carat = 0.23, table = 55)
+
+predict(diamantes.lm, nuevoDiamante)
+# Nos dira que el precio del  diamante se situa en 325.94. Podemos comprobar, como en nuestro dataset
+# existia un diamante con esas caracteristicas, y su precio real se situa en los 326.
+
+# Podemos ver como quedaria la grafica con la prediccion del precio:
+qqplot(price,prediccion.precio)
+
+
+# Representacion de los residuos: Veremos si hay algun diamante que se comporta de manera diferente:
+plot(diamantes.lm$residuals)
+abline(h=0, col = "red")
+
+# Se puede observar como la mayoria de diamantes se situan en la recta, aunque existen
+# muchos otros que se desplazan de ella.
+
+
+
+-------------------------------------------------------------------------------------------
+  
+############################### ANALISIS DE LA VARIANZA ##############################################
+
+# Partimos de dos grupos que hemos creado, igual que ocurria en el anterior ejemplo.
+# Recordamos que: los valores de la variable cut, los renombramos del 1 al 5, de mejor(Ideal) a peor(Fair)
+# Vamos a elegir los dos  valores extremos el 1 y el 5 para realizar el estudio.
+
+CutIdeal2 = df.estudio$cut2 == 1
+CutFair2 = df.estudio$cut2 == 5
+
+# Combinamos ambos grupos:
+
+combinados <- data.frame(cbind(CutIdeal2,CutFair2))
+summary(combinados)
+stackedCombinados <- stack(combinados)
+
+# Calculamos la anova:
+Anova <- aov(values~ind, data = stackedCombinados)
+summary(Anova)
+# obtenemos un p-value < 0.05
+
+
+
+
